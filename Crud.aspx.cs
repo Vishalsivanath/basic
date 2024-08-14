@@ -71,7 +71,26 @@ namespace CrudOperation
         protected void Gridview1_RowEditing(object sender, GridViewEditEventArgs e)
         {
             GridView1.EditIndex = e.NewEditIndex;
-            GridView();
+            GridViewRow row = GridView1.Rows[e.NewEditIndex];
+            TextBox textId = (TextBox)row.FindControl("textId");
+            TextBox text2 = (TextBox)row.FindControl("text2");
+            TextBox text3 = (TextBox)row.FindControl("text3");
+            TextBox text4 = (TextBox)row.FindControl("text4");
+            Label lbltextId = (Label)row.FindControl("lbltextId");
+            Label lbltext2 = (Label)row.FindControl("lbltext2");
+            Label lbltext3 = (Label)row.FindControl("lbltext3");
+            Label lbltext4 = (Label)row.FindControl("lbltext4");
+
+
+            textId.Visible = true;
+            text2.Visible = true;
+            text3.Visible = true;
+            text4.Visible = true;
+            lbltextId.Visible = false;
+            lbltext2.Visible = false;
+            lbltext3.Visible = false;
+            lbltext4.Visible = false;
+            //GridView();
         }
 
         protected void Gridview1_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
